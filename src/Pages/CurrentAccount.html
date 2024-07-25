@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../Style/Style.css" />
+    <title>Current Account</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container-fulid">
+        <img src="../images/CapgeminiBank.png" height="50" width="130" />
+        <div class="userProfile">
+          <img src="../images/userIcon.png" height="30" width="30" />
+          <p id="usernameText"></p>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <a href="./login.html">Log Out</a>
+    </div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./Dashboard.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./personalDetails.html">Personal Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./SavingAccount.html">Saving Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="./CurrentAccount.html"
+          >Current Account</a
+        >
+      </li>
+    </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 box">
+          <h5>Current Account Details</h5>
+          <div class="text-box">
+            Account Type: &nbsp;
+            <p id="currentAccountType">Current</p>
+          </div>
+          <div class="text-box">
+            Account Number: &nbsp;
+            <p id="currentAccountNumber"></p>
+          </div>
+          <div class="text-box">
+            Sort code: &nbsp;
+            <p id="currentSortCode"></p>
+          </div>
+          <div class="text-box">
+            Balance: &nbsp;
+            <p id="currentBalance"></p>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="openTransferForm()">Transfer to Savings account</button>
+      <div id="transferForm" style="display: none">
+        <form>
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" required /><br />
+          <button onclick="transferMoney()" type="button">Transfer</button>
+        </form>
+      </div>
+
+      <button onclick="openTransferForm2()">Make a bank transfer</button>
+      <div id="transferForm2" style="display: none">
+        <form>
+          <label for="accountName">Account Name:</label>
+          <input
+            type="text"
+            id="accountName"
+            name="accountName"
+            required
+          /><br />
+
+          <label for="sortcode">Sort Code:</label>
+          <input type="text" id="sortcode" name="sortcode" required /><br />
+
+          <label for="accountNumber">Account Number:</label>
+          <input
+            type="text"
+            id="accountNumber"
+            name="accountNumber"
+            required
+          /><br />
+
+          <label for="amount2">Amount:</label>
+          <input type="number" id="amount2" name="amount2" required /><br />
+          <button onclick="transferMoneyLocal()" type="button">Transfer</button>
+        </form>
+      </div>
+    </div>
+    <script src="../Scripts/CurrentAccount.js"></script>
+  </body>
+</html>
